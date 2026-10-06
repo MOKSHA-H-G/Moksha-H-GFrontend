@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Task Management Dashboard</h1>
+            <p>Manage your tasks efficiently</p>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>In Progress</h3>
+                <p id="progressTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks..."
+            >
+
+            <select id="statusFilter">
+                <option value="All">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <button id="addTaskBtn">+ Add Task</button>
+
+        </section>
+
+        <!-- Task Form -->
+        <section id="taskFormSection" class="form-section hidden">
+
+            <h2 id="formTitle">Add Task</h2>
+
+            <form id="taskForm">
+
+                <input type="hidden" id="taskId">
+
+                <label>Task Title</label>
+                <input type="text" id="title" placeholder="Enter task title">
+
+                <small id="titleError" class="error"></small>
+
+                <label>Description</label>
+                <textarea
+                    id="description"
+                    placeholder="Enter task description">
+                </textarea>
+
+                <label>Priority</label>
+                <select id="priority">
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <small id="priorityError" class="error"></small>
+
+                <label>Status</label>
+                <select id="status">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <label>Due Date</label>
+                <input type="date" id="dueDate">
+
+                <small id="dateError" class="error"></small>
+
+                <div class="form-buttons">
+                    <button type="submit">Save Task</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="task-section">
+
+            <h2>Tasks</h2>
+
+            <div id="taskList"></div>
+
+            <p id="noTasks" class="no-tasks">
+                No tasks found.
+            </p>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

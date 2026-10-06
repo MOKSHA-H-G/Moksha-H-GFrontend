@@ -1,0 +1,18 @@
+# Environment variables
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Personal/private files
+passwords.txt
+credentials.txt
+personal_notes.txt
